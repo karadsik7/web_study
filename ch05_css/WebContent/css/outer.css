@@ -1,0 +1,14 @@
+@charset "UTF-8";
+
+p {
+	border: 1px black solid;
+	/*이 코드는 아래와 같이 바꿀 수 있다.*/
+	/* border-width: 1px;
+		border-color: black;
+		border-style: solid; */
+}
+
+#my_p {
+	color: orange;
+	font-family: consolas;
+}

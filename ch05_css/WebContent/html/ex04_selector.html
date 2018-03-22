@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	/*태그 선택자*/
+	li{
+		list-style: none;
+	}
+	
+	/* 아이디 선택자 */
+	/* #과 아이디명으로 이용 아이디는 관례상 하나를 지정하면 하나의 태그에만 사용 */
+	#baek{
+		margin-left: 10px;
+		margin-bottom: 50px;
+	}
+	
+	/* 클래스 선택자 */
+	/* 처음에 (.)과 클래스명으로 이용 여러개의 태그에 동시 사용하고 싶을 때 클래스 선택자를 이용 */
+	.abc{
+		color: #ff00ff;
+	}	
+	/* 속성 선택자 */
+	/* 임의로 정한 속성명에 []로 덮으면 됨 */
+	[title]{
+		text-decoration: underline;
+	}
+	
+	[title="1"]{
+		font-size: 20pt;
+	}
+	
+	/* 슈도(의사)클래스 */
+	/* 이벤트 감지자 비슷한 개념 콜론(:)으로 사용한다*/
+	li:hover{
+		border: aqua solid 2px;
+	}
+	
+	/* 자식 선택자 */
+	/* 부모와 자식관계를 >로 표현하여 이용 */
+	li>p{
+		border: 2px red dotted;
+	}
+	
+	/* 자손 선택자 */
+	/* >는 직계자식만 선택하지만 띄어쓰기로하면 자식뿐만아니라 자손까지 전부 선택함 */
+	body p{
+		color: green;
+	}
+	
+	/* 선택자 조합 */
+	/* p태그에서 abc라는 선택자를 가지고 있는 태그만 선택한다 */
+	/* p.abc>table 등 조합이 무궁무진하므로 상황에 맞춰 사용하면됨 */
+	p.abc{
+		font-family: cursive;
+	} 
+	
+	/* 다수 선택자 */
+	/* 다수의 선택자를 지정하고 싶을 때*/
+	p, li{
+		background-color: navy;
+	}
+	
+	
+	
+</style>
+</head>
+<body>
+	<ul>
+		<li>동해물과</li>
+		<li id="baek">백두산이</li>
+		<li class="abc">마르고</li>
+		<li class="abc">닳도록</li>
+		<!-- title이 코드명이 아님 => 속성 선택자는 속성명대로 위에서 바꾸면 됨 : 주석과 같은 개념, 코드에 대한 설명 -->
+		<li title="1">하느님이</li>
+		<li title="2">보우하사</li>
+		<li>
+			<p>zzzz</p>
+		</li>
+		
+	</ul>	
+	
+	<p class="abc">우리나라 만세</p>
+</body>
+</html>

@@ -1,0 +1,47 @@
+@charset "UTF-8";
+
+.ttl{
+	text-decoration: underline;
+	font-weight: bold;
+}
+
+.skL{
+	color: blue;
+}
+
+.aca{
+	color: red;
+}
+
+.cap{
+	font-size: 20pt;
+}
+
+.proTr>td{
+	font-weight: bold;
+}
+
+.table{
+	width: 500px;
+	height: 300px;
+	text-align: center;
+}
+
+table, td, tr{
+	border: 1px black solid;
+	border-collapse: collapse;
+}
+
+.proTr>td{
+	background: gray;
+}
+
+.highTr>td{
+	font-style: italic;
+}
+
+.uniTr{
+	text-decoration: underline;
+}
+
+

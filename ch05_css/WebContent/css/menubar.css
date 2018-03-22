@@ -1,0 +1,61 @@
+@charset "UTF-8";
+
+ul{
+	list-style: none;
+}
+
+ul.horizon_menu>li{
+	display: inline-block;
+	width: 120px;
+	height: 30px;
+	background: black;
+	text-align: center;
+	margin-right: 50px;
+	margin-left: 20px;
+	border: 1px solid blue;
+	
+}
+
+ul.horizon_menu>li>a{
+	width: 100%;
+	height: 100%;
+	text-decoration: none;
+	color: white;
+	font-size: 16pt;
+	font-weight: bold;
+	
+}
+
+ul.horizon_menu>li:hover{
+	background: white;
+}
+
+ul.horizon_menu>li>a:hover{
+	color:black;
+}
+
+ul.vertical_menu>li{
+	display: block;
+	width: 120px;
+	height: 30px;
+	background: green;
+	text-align: center;
+	border: 1px black solid;
+	margin-bottom: 20px;
+	margin-top: 50px;
+}
+
+ul.vertical_menu>li>a{
+	width: 100%;
+	height: 100%;
+	text-decoration: none;
+	color: white;
+	font-size: 16pt;
+	font-weight: bold;
+	
+}
+
+ul.vertical_menu>li>a:hover{
+	color:black
+}
+
