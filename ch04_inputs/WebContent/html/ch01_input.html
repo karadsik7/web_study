@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<!-- input은 사용자가 입력할 수 있는 도구를 생성해주는 코드 -->
+	
+	
+	
+	<input type="text" /><br />
+	<input type="password" /><br />
+	
+	<!-- placeholder는 회색으로 옅게 출력될 안내 문구를 설정해둘 수 있다. -->
+	<input type="text" placeholder = "아이디를 입력해주세요." /><br />
+	
+	<!-- 그룹으로 묶는 것은 name으로 같은 이름을 지정해주면 같은 그룹으로 묶인다 -->
+	<!-- checked를 쓰면 라디오박스나 체크박스 모두 기본으로 체크가 된다. -->
+	<input type="radio" name="gender" checked/>남성
+	<input type="radio" name="gender"/>여성<br />
+	
+	<input type="checkbox" />영화
+	<input type="checkbox" checked/>음악
+	<input type="checkbox" />독서
+	<br />
+	
+	<!-- 콤보박스 생성 -->
+	<!-- 기본지정은 checked가 아닌 selected -->
+	혈액형	
+	<select>
+		<option>:::::선택하세요::::::</option>
+		<option>A형</option>
+		<option>AB형</option>
+		<option>B형</option>
+		<option>O형</option>
+	</select>
+	<br />
+	
+	<!-- textarea -->
+	<textarea cols="30" rows="10" placeholder="내용을 입력해주세요."></textarea>
+	<br />
+	
+	<!-- 날짜 -->
+	<input type="date" />
+	<br />
+	<!-- 범위값 -->
+	<input type="range" min = "50" max = "400"/>
+	<br />
+	
+	<!-- 파일 -->
+	<input type="file" />
+	<br />
+	
+	<!-- hidden은 나중에 변수처럼 사용됨, 실제로 보이지 않음 -->
+	<input type="hidden" value = "123"/>
+	
+	<!-- color -->
+	<input type="color" />	
+</body>
+</html>
