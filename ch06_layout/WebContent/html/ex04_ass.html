@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+*{margin: 0px;}
+.main{height: 600px}
+.top{height: 200px}
+.bot{height: 400px; display:grid; grid-template-columns: 70% 30%;}
+.botLeftBot{display:grid; grid-template-columns: 33% 34% 33%;}
+.botRightTop{display:grid; grid-template-columns: 50% 50%}
+.red{background: red; height: 60%;}
+.orange{background: orange; height: 40%;}
+.botLeftTop{height:20%; background: yellow}
+.botLeftBot{height: 80%}
+.botRightTop{height:25%}
+.botRightMid{height:35%}
+.botRightBot{height:40%}
+
+</style>
+</head>
+<body>
+	<!-- 메인패널 -->
+	<div class="main">
+	<!-- 상단분리패널 -->
+		<div class="top">
+			<!-- 상단빨강 -->
+			<div class="red" style="background: red"></div>
+			<div class="orange" style="background: orange"></div>
+		</div>
+		<!-- 하단분리-->
+		<div class="bot">
+			<!-- 하단좌패널 -->
+			<div class="botLeft">
+				<!-- 좌패널 내부에서 상단과 하단6개 분리 -->
+				<div class="botLeftTop"></div>
+				<div class="botLeftBot">
+					<div style="background: green"></div>
+					<div style="background: blue"></div>
+					<div style="background: #009"></div>
+					<div style="background: purple"></div>
+					<div style="background: pink"></div>
+					<div style="background: cyan"></div>
+				</div>
+			</div>
+			<!-- 하단우패널 : 상중하로 나눌것-->
+			<div class="botRight">
+				<!-- 하단우패널 안에서 상패널 -->
+				<div class="botRightTop">
+					<div class="darkgray" style="background: gray"></div>
+					<div class="gray" style="background: #aaa"></div>
+				</div>
+				<!-- 하단우패널안에서 중패널 -->
+				<div class="botRightMid" style="background: white"></div>
+				<!-- 하단우패널안에서 하패널 -->
+				<div class="botRightBot"style="background: hotpink"></div>
+			</div>
+		</div>
+	</div>
+
+
+
+</body>
+</html>
