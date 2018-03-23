@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+
+	//window.location과 a태그의 차이점 : 경로 이동이라는 측면에서는 동일하나 location태그에선
+	//a태그가 할 수 없는 추가적인 작업이 가능하다.
+	function moveTo(){
+		var check = confirm("정말로 이동하시겠습니까?");
+		if(check){
+			//location.href = "http://www.naver.com";
+			//assign과 href는 같은 기능이지만 = ""로 사용하냐, 함수처럼 ()로 사용하냐의 차이
+			location.assign("http://www.naver.com");
+			//replace는 history에 저장이 안됨
+			location.replace("http://www.naver.com");
+			
+		}
+		
+	}
+</script>
+</head>
+<body>
+	여기는 Location
+	<button onclick="moveTo()">이동</button>
+</body>
+</html>

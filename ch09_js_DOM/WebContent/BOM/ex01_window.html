@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	//onload : html이 전부 실행된 후에 실행됨
+	window.onload = function(){
+		alert("윈도우가 로드됐습니다.");
+	} 
+	window.console.log("BOM");
+	
+	/* var name = window.prompt("당신의 이름을 알려주세요.");
+	window.alert(name.length + "글자의 이름이군요."); */
+	
+	var check = window.confirm("계속 진행하시겠습니까?");
+	console.log(check);
+	if(check){
+		alert("good");
+	}else{
+		alert("bad");
+	}
+	
+	
+
+</script>
+
+</head>
+<body>
+
+</body>
+</html>
