@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<script>
+	function plus(num1, num2){
+		var num3 = num1 + num2;
+		return num3;
+	}
+	
+	document.write(plus(30, 50));
+	
+	//익명함수
+	
+	var minus = function(num1, num2){
+		return num1 - num2
+	}
+	
+	document.write("<br>" + minus(50, 30));
+	
+	//실습 : areaofCircle, lengthofCircle을 정의하시오.
+	
+	function areaOfCircle(r){
+		return 2 * Math.PI * r; 
+	}
+	
+	var lengthOfCircle = function(r){
+		return Math.PI * r * r;
+	}
+	
+	document.write("<br>" + areaOfCircle(5));
+	document.write("<br>" + lengthOfCircle(5));
+	
+</script>
+<body>
+
+</body>
+</html>

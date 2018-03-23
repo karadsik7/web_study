@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function Car(){
+		//var로 선언하면 Car라는 클래스의 지역변수가 아닌 함수의 지역변수가 됨
+		var msg = "123";
+		//this.로 선언을 하면 클래스의 지역변수로 인식
+		this.model;
+		this.price = 10000;
+		//자바에서는 메서드안에 메서드 선언을 불허하나 js는 함수안에 함수선언 가능
+		this.getInfo = function(){
+			console.log(this.model, this.price);
+		}
+	}
+	
+	//클래스를 불러오려면 new를 붙여야 함수가 아닌 클래스로 인식
+	//그냥 Car()만 적으면 함수로 인식해서 코드실행X
+	var myCar = new Car();
+	myCar.model = "benz";
+	myCar.getInfo();
+	
+	function Person(name, job){
+		this.name = name;
+		this.job = job;
+		this.getInfo = function(){
+			console.log(this.name, this.job);
+		}
+	}
+	
+	var me = new Person("장진수", "학생");
+	me.getInfo();
+	
+	//JSON 방식으로 객체 생성
+	var product = {
+		name : '컴퓨터', price : 1600000, getInfo: function(){
+			console.log("품명: " + this.name, "가격: " + this.price);
+		}
+	}
+	
+	product.getInfo();
+	product.name = "computer";
+	product.getInfo();
+	
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

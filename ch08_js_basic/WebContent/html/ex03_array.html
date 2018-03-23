@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	//스크립트가 이자리에 있으면 스크립트가 먼저 실행되면서 널포인터가 됨
+	//방법1. 스크립트코드를 바디 아래로 내림
+	//방법2. window.onload [<= 창의 로드가 끝났을 때] = function(){} [<= 1회용 익명함수] 내부에 코드를 삽입 
+	window.onload = function(){
+		var cityArray = ["서울", "대전", "대구", "부산"];
+		var select = document.getElementById("city");
+		for(var i = 0; i < cityArray.length; i++){
+			select.innerHTML += "<option>" + cityArray[i] + "</option>";
+		}	
+	};
+</script>
+</head>
+<body>
+	<select id="city">
+		<option value="">:::선택:::</option>
+	</select>
+
+</body>
+</html>
