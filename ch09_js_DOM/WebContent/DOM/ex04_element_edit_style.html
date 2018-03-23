@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	//자바 스크립트로 css변경하기
+	function fontSizeUp(){
+		var pTags = document.getElementsByTagName("p");
+		for(var p of pTags){
+			p.style.fontSize = "20px";
+			p.style.color = "red";
+		}
+	}
+
+</script>
+</head>
+<body>
+	<p>동해물과 백두산이</p>
+	<p>마르고 닳도록</p>
+	<p>하느님이 보우하사</p>
+	<p>우리나라 만세</p>
+	<button onclick = "fontSizeUp();">폰트 크기 증가</button>
+</body>
+</html>

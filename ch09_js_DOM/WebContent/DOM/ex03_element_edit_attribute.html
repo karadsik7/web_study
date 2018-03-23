@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	// 태그의 속성을 변경하기
+		
+	function change(){
+		var button = document.getElementById("btn");
+		var textbar = document.getElementById("txt");
+		if(button.value == "변경"){
+			button.value = "변경 후";
+			//버튼이 눌렸을 때 place holder를 비밀번호로
+			textbar.placeholder = "패스워드";
+			textbar.type="password";
+		}else{
+			button.value = "변경";
+			textbar.placeholder = "아이디";
+			textbar.type = "text";
+		}
+	}
+	
+	function dup(){
+		document.getElementById("id").readOnly = "readonly";	
+	}
+
+</script>
+</head>
+<body>
+	<input id = "txt" type="text" placeholder="아이디" />
+	<input id = "btn" type="button" value = "변경" onclick = "change();"/>
+	<br />
+	<input type="text" id = "id" placeholder = "아이디를 입력하세요." />
+	<button onclick = "dup();" id = "dup">중복 확인</button>
+</body>
+</html>

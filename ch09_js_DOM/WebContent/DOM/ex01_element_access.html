@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	onload = function(){
+		//1. id속성으로 태그에 접근 : getElementById
+		var song = document.getElementById("song");
+		console.log(song);
+		console.log(song.id);
+		console.log(song.class);
+		console.log(song.title);
+		
+		//2. 태그이름으로 태그에 접근 : getElement's'ByTagName <= s주의 (태그는 여러개일 수 있기 때문)
+		// 따라서 저장방식도 배열로 저장된다.
+		var pTags = document.getElementsByTagName("p");
+		//console.log(pTags[1].innerHTML);
+		
+		//forEach문 사용 
+		
+			//(1) of사용 : 직접 자바의 forEach문과 같이 요소를 가져옴
+		for(var p of pTags){
+			console.log(p.innerHTML);
+		}
+		
+			//(2) in사용 : 인덱스를 가져온다
+		for(var i in pTags){
+			console.log(pTags[i].innerHTML);
+		}
+			
+		//3. class 속성을 통하여 요소에 접근 : 클래스도 복수이기 때문에 Elements이며 배열로 저장됨
+		
+		var eights = document.getElementsByClassName("eight");
+		for(var i = 0; i < eights.length; i++){
+			console.log(eights[i].title);
+		}
+		
+		
+		
+	}
+	
+</script>
+</head>
+<body>
+	<p id="song" class="eight" title="abc">동해물과 백두산이</p>
+	<p id="song" class="eight" title="def">마르고 닳도록</p>
+	<p id="song" class="eight" title="ghi">하느님이 보우하사</p>
+	<p id="song" class="eight" title="jkl">우리나라 만세</p>
+	
+</body>
+</html>

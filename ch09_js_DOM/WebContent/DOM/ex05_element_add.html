@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+
+	//태그 추가
+	function addText(){
+		var input = document.createElement("input");
+		input.type = "range";
+		input.style.display = "block";
+		document.getElementById("target").appendChild(input);
+	}
+	
+	function add(){
+		//1. 사용자의 입력값을 받아옴
+		var userText = document.getElementById("txt").value;
+		//2. 옵션 태그를 생성
+		var addText = document.createElement("option")
+		//addText.innerHTML = userText;
+		addText.value = userText;
+		
+		//3. select태그에 집어넣음
+		document.getElementById("food").appendChild(addText);
+		
+		
+	}
+</script>
+</head>
+<body>
+	<!-- <div id = "target" onclick = "addText();">Click me!</div> -->
+	
+	<!-- 실습 : 텍스트를 입력하면 콤보박스의 요소로 들어가게 -->
+	
+	<select id="food">
+		<option value="">:::선택:::</option>
+	</select>
+	<br />
+	<input type="text" id = "txt"/>
+	<button id = "btn" onclick = "add();">추가</button>
+	
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	var song1 = ["동해물과 백두산이", "마르고 닳도록", "하느님이 보우하사", "우리나라 만세"]
+	var song2 = ["남산위에 저 소나무", "철갑을 두른듯", "바람서리 불변함은", "우리 기상일세"]
+	
+	//실습 : 버튼하나로 1, 2절 체인지
+	var check = true;
+	
+	function change(){
+		if(check){
+			second();
+			}else{
+			first();
+			}
+		check = !check;
+		}
+	
+	function first(){
+		var pTags = document.getElementsByTagName("p");
+		for(var i in pTags){
+			pTags[i].innerHTML = song1[i];
+		}
+	}
+	
+	
+	function second(){
+		var pTags = document.getElementsByTagName("p");
+		for(var i in pTags){
+				pTags[i].innerHTML = song2[i];
+		}
+	}
+	
+
+</script>
+</head>
+<body>
+	<p>동해물과 백두산이</p>
+	<p>마르고 닳도록</p>
+	<p>하느님이 보우하사</p>
+	<p>우리나라 만세</p>
+	<button onclick="first();">1절</button>
+	<button onclick="second();">2절</button>
+	<input type="button" onclick="change();" value = "변경"/>
+	
+</body>
+</html>
