@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	#area{
+		width : 200px; height : 200px; background : #bbbbbb;
+	}
+</style>
+<script>
+	function addText(){
+		var area = document.getElementById("area");
+		area.style.background = "red";
+		area.innerHTML += "<br> 안녕하세요.";
+	}
+	
+	onload = function(){
+		var area = document.getElementById("area");
+		//스크립트 공간에서 함수명();는 리턴을 받는 것이기 때문에 undefined가 되버림
+		//그러니 스크립트 공간에서 리턴형이 없을 때는 함수명만 적어야함
+		//HTML바디에서 호출은 함수명();`
+		
+		//클릭
+		area.onclick = addText;
+		
+		//더블클릭
+		area.ondblclick = function(){
+			console.log("더블클릭");
+		}
+		
+		//마우스가 들어갔을때
+		area.onmouseover = function(){
+			area.style.background = "blue";
+		}
+		
+		//마우스 나갈때
+		area.onmouseout = function(){
+			area.style.background = "green";
+		}
+		
+		
+		//드래그할때
+		area.ondrag = function(){
+			console.log("드래그중");
+		}
+		
+	}
+</script>
+</head>
+<body>
+	<div draggable = "true" id="area">
+		여기를 클릭해보세요.
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	onload = function(){
+		var myInput = document.getElementById("input");
+		myInput.onkeypress = function(event){
+			if(event.key == "Enter"){
+				var temp = myInput.value;
+				if(temp == ""){
+					return;
+					}
+				var add = document.createElement("option");
+				add.innerHTML = temp;
+				document.getElementById("select").appendChild(add);
+				myInput.value = null;
+			}
+		}
+		
+		var itemSelect = document.getElementById("select");
+		itemSelect.onchange = function(event){
+			document.getElementById("area").innerHTML += itemSelect.value + ", ";
+		}
+		 
+		
+		
+	}
+
+
+</script>
+</head>
+<body>
+	<textarea id="area"></textarea>
+	<br />
+	<select name="" id="select">
+		<option>::선택::</option>
+	</select>
+	<br />
+	<input type="text" id="input" />
+</body>
+</html>

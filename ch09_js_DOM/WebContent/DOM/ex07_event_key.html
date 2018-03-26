@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	onload = function(){
+		var input = document.getElementById("input");
+		//keypressed
+		input.onkeydown = function(event){
+			if(event.key == "Enter"){
+				var text = input.value;
+				console.log(text);
+				//code here
+				var d = document.getElementById("area");
+				d.innerHTML += text + "<br>";
+				//innerText로 쓰면 br도 텍스트로 들어가버림
+				//d.innerText += text + "<br>";
+				input.value = null;
+				//과제 : 사용자가 입력한 값을 div태그로 출력
+				
+				
+			}
+		}
+		//keypress는 특수키 (ctrl, alt, shift 등)를 감지하지 못하므로
+		//캐릭터만 감지할 때 쓰면 덜 민감하므로 유용함
+		input.onkeypress = function(event){
+			console.log("press", event.key);
+		}
+		
+		input.onkeyup = function(event){
+			var myInput = document.getElementById("input");
+			var text = myInput.value;
+			myInput.value = text.toUpperCase();
+		}
+		
+	}
+</script>
+</head>
+<body>
+	<div id="area"></div>
+	<input type="text" id="input" />
+</body>
+</html>

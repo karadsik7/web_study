@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	input[type="text"]{
+		width: 243px;
+		text-align: right;
+		/* margin은 태그간의 간격 padding은 태그 내부의 자식데이터의 간격 */
+		padding-right: 10px;
+	}
+	button{
+		margin-top: 5px;
+		width : 60px;
+		height : 30px;
+		font-size: 12pt;
+	}
+</style>
+<script>
+	var expression = "";
+	var display;
+
+
+	onload = function(){
+		var run = document.getElementById("run");
+		var clear = document.getElementById("clear");
+		display = document.getElementById("display");
+		run.onclick = compute;
+		clear.onclick = clearCalc;
+				
+	}
+	
+	function compute(){
+		/* var expression = document.getElementById("display").value;
+		document.getElementById("display").value = eval(expression); */
+		try{
+			display.value = eval(display.value);
+		}catch(exception){
+			alert("잘못된 수식입니다.");
+			display.value = "";
+		}
+	}
+	
+	function add(ch){
+		display.value += ch;
+	}
+	
+	function clearCalc(){
+		display.value = null;
+		display.placeholder = 0;
+	}
+</script>
+</head>
+<body>
+	<input type="text" id = "display" readonly />
+	<br />
+	<button onclick = "add('7');">7</button>
+	<button onclick = "add('8');">8</button>
+	<button onclick = "add('9');">9</button>
+	<button onclick = "add('/');">÷</button>
+	<br />
+	<button onclick = "add('4');">4</button>
+	<button onclick = "add('5');">5</button>
+	<button onclick = "add('6');">6</button>
+	<button onclick = "add('*');">×</button>
+	<br />
+	<button onclick = "add('1');">1</button>
+	<button onclick = "add('2');">2</button>
+	<button onclick = "add('3');">3</button>
+	<button onclick = "add('-');">-</button>
+	<br />
+	<button onclick = "add('0');">0</button>
+	<button id="clear">C</button>
+	<button id="run">＝</button>
+	<button onclick = "add('+');">＋</button>
+	<br />
+</body>
+</html>
