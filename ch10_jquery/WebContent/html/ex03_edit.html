@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script>
+	//요소추가&삭제
+	$(function(){
+		//자식 요소로 추가
+		var myH1 = $("<h1></h1>");
+		myH1.html("새로 생성된 h1태그");
+		//메서드 체인
+		// var myH1 = $("<h1></h1>").html("새로 생성된 h1태그");
+		$("body").append(myH1);
+		$("body").prepend("<h2>새로 생긴 h2태그</h2>");
+		
+		//형제 요소로 추가
+		$("#p2").before("<h2>p2 태그 전에 존재하는 h2태그</h2>");
+		$("#p2").after("<h2>p2 태그 전에 존재하는 h2태그</h2>");
+		
+		
+		//내용변경
+		$("#p1").html("<h3>동해물과 백두산이</h3>"); //innerHTML
+		//innerText는 태그까지 다 텍스트로 들어가버림
+		$("#p2").text("<h3>마르고 닳도록</h3>"); //innerText
+		
+		//속성추가
+		$("#p1").attr("style", "color:red");
+		//$('#p2').attr("onclick", "alert('속성추가')");
+		$('#p2').attr({onclick:"alert('속성추가');", onmouseover:"console.log('속성추가')"});
+		
+		//스타일추가
+		$('#p3').css("background", "blue");
+		$('#p4').css({border: "1px solid red", "font-family" : "궁서"});
+		
+		$("#p3, #p4").addClass("my_class");
+		$("#p3, #p4").removeClass("my_class");
+	})
+	
+	//empty()는 내부의 자식태그를 다 날려버리는거고 속성은 유지
+	//remove()는 모두 제거
+	
+	function removeFooter(){
+		$("#footer").remove();
+	}
+	
+	function emptyFooter(){
+		$("#footer").empty();
+	}
+	
+</script>
+<style>
+.my_class{
+	margin-left: 100px;
+}
+</style>
+</head>
+<body>
+	<p id="p1">P1입니다.</p>
+	<p id="p2">P2입니다.</p>
+	<p id="p3">P3입니다.</p>
+	<p id="p4">P4입니다.</p>
+	
+	<div id="footer" style = "height:100px; border:1px solid red">
+		<!-- span태그는 줄바꿈이 안됨 (inline속성) -->
+		<span>학교종이</span>
+		<span>땡땡땡</span>
+	</div>
+	
+	<button onclick="removeFooter();">remove</button>
+	<button onclick="emptyFooter();">empty</button>
+</body>
+</html>

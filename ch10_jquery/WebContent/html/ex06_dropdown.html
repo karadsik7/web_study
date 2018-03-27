@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script>
+	$(function(){
+		/* $(".dropdown").mouseover(function(){
+			$(".menu").slideDown(500);
+		})
+		
+		$(".dropdown").mouseout(function(){
+			$(".menu").slideUp(300);
+		}) */
+		
+		$(".dropdown").hover(function(){
+			$(".menu").slideDown(500);
+		}, function(){
+			$(".menu").slideUp(250);
+		});
+	});
+	
+	
+	
+	
+</script>
+<style>
+	.dropdown{
+		width: 100px;
+	}
+	.dropdown>a{
+		display:block;
+		text-decoration: none;
+		background: #b0b;
+		text-align: center;
+		padding: 5px; 0px;
+		color: white;
+	}
+	.menu>a{
+		display:block;
+		text-decoration: none;
+		background: black;
+		padding: 20px; 0px;
+		color: white;
+		padding-left: 10px;
+		display:none;
+		
+	}
+	.menu>a:hover{
+		background: gray;
+	}
+	
+	
+</style>
+</head>
+<body>
+	<div class="dropdown">
+		<a href="" id="hwa">화장품</a>
+		<div class="menu">
+			<a href="">sk-II</a>
+			<a href="">Aritaum</a>
+			<a href="">설화수</a>
+		</div>
+	</div>
+</body>
+</html>

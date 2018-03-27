@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script>
+	//다음 요구사항을 jquery선택자와 함수들을 사용해서 처리하시오.
+	
+	//1 - 클래스가 main인 div의 width를 800, height을 600으로 지정
+	//2 - main클래스 안에 존재하는 3개의 div태그들의 height을 33.33%로 지정
+	//3 - 아이디가 p2인 태그의 글씨색을 초록색으로 변경
+	//4 - 모든 th태그의 배경을 회색으로 변경하고 글씨색을 하얀색으로 변경
+	//5 - 모든 td태그의 글씨정렬을 가운데 맞춤으로 변경 
+	//6 - 아이디가 myTable인 태그에 tr태그를 추가하되 
+	//    해당 tr태그에는 td태그 4개가 존재하고 13번 ~ 16번에 해당하는 데이터를 포함 
+	$(function(){
+		$("div.main").css("width", "800px");
+		$("div.main").css("height", "600px");
+		$(".main>div").css("height", "33.33%");
+		$("#p2").css("color", "green");
+		$("th").css("background", "gray");
+		$("th").css("color", "white"); 
+		
+		var newTd = "<td>13번</td> <td>14번</td> <td>15번</td> <td>16번</td>"
+		$('#myTable').append("<tr id = 'dd'></tr>").append(newTd);
+		
+		$('td').css("text-align", "center");
+	})
+	
+	
+	
+	
+	
+</script>
+<style>
+body{
+text-align: 
+}
+</style>
+</head>
+<body>
+	<div class="main">
+		<div class="header">
+			<h3 id="h3_1">저는 h3_1입니다</h3>
+			<h3 id="h3_2">저는 h3_2입니다</h3>
+			<h3 id="h3_3">저는 h3_3입니다</h3>
+			<h3 id="h3_4">저는 h3_4입니다</h3>
+		</div>
+		<div class="content">
+			<p id="p1">저는 p1입니다.</p>
+			<p id="p2">저는 p2입니다.</p>
+			<p id="p3">저는 p3입니다.</p>
+			<p id="p4">저는 p4입니다.</p>
+		</div>
+		<div class="footer">
+			<table id="myTable">
+				<tr>
+					<th>1번 컬럼명</th>
+					<th>2번 컬럼명</th>
+					<th>3번 컬럼명</th>
+					<th>4번 컬럼명</th>
+				</tr>
+				<tr>
+					<td>1번 </td>
+					<td>2번 </td>
+					<td>3번 </td>
+					<td>4번 </td>
+				</tr>
+				<tr>
+					<td>5번 </td>
+					<td>6번 </td>
+					<td>7번 </td>
+					<td>8번 </td>
+				</tr>
+				<tr>
+					<td>9번 </td>
+					<td>10번 </td>
+					<td>11번 </td>
+					<td>12번 </td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</body>
+</html>

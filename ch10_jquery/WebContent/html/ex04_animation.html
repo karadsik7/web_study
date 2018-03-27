@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script>
+	
+	function hideP1(){
+		//hide는 숨어있게 하는것, 하이드 함수 파라미터로 밀리세컨드를 주면 그 시간이 걸리면서 사라짐
+		//파라미터를 이용해서 콜백 가능
+		$("#p1").hide(1000, showP1);
+	}
+	
+	function showP1(){
+		//hide와 사용방식 동일 밀리세컨드가 걸려서 다시 나타남
+		//파라미터를 두개 주면 끝난 뒤 함수를 호출 가능 (콜백)
+		$("#p1").show(500, hideP1);
+	}
+	
+	function toggleP1(){
+		$("#p1").toggle();
+	}
+	
+	function toggleP2(){
+		$("#p2").toggle(1000);
+	}
+	
+	function fadeOut(){
+		$("#baby").fadeOut(1000);
+	}
+	
+	function fadeIn(){
+		$('#baby').fadeIn(1000);
+	}
+	
+	function fadeToggle(){
+		$('#baby').fadeToggle(1000);
+	}
+	
+	function fadeTo(){
+		$('#baby').fadeTo(1000, '0.5');
+	}
+	
+	function slideToggleLogin(){
+		$('#login').slideToggle(1000, function(){
+			if($('#open').html() == "로그인하기"){
+				$('#open').html("창 닫기");
+			}else{
+				$('#open').html("로그인하기");
+			}
+		});
+	};
+
+	function moveLeft(){
+		$("#baby2").animate(
+				{"right":"500px", opacity:0.5}, 500, moveRight);
+	};
+	
+	function moveRight(){
+		$("#baby2").animate(
+				{"left":"500px", opacity:1}, 500, moveLeft);
+	};
+	
+	function moveUp(){
+		$("#baby2").animate({"bottom":"500px"}, 500, moveDown);
+	}
+	
+	function moveDown(){
+		$("#baby2").animate({"top":"500px", "left":"200px"}, 500, moveUp);
+	}
+
+</script>
+<style>
+
+	#baby2{
+		position: relative;
+		top:0px;
+		left:0px;
+	}
+	#login{
+		border: 1px solid black;
+		width: 300px;
+		height: 80px;
+		display: none;
+		margin
+	}
+</style>
+</head>
+<body>
+	<p id="p1">p1입니다</p>
+	<p id="p2">p2입니다</p>
+	<p id="p3">p3입니다</p>
+	<p id="p4">p4입니다</p>
+	
+	<!-- basic효과 -->
+	
+	<button onclick="hideP1();">hideP1</button>
+	<button onclick="showP1();">showP1</button>
+	<button onclick="toggleP1();">toggleP1</button>
+	<button onclick="toggleP2();">toggleP2</button>
+	<br />
+	
+	<!-- fade효과 -->
+	<img src="../img/man.gif" alt="아기사진" id="baby" /><br />
+	<button onclick="fadeOut();">fadeOut</button>
+	<button onclick="fadeIn();">fadeIn</button>
+	<button onclick="fadeToggle();">fadeToggle</button>
+	<button onclick="fadeTo();">fadeTo</button>
+	
+	<!-- slide효과 -->
+	
+	<div id="login">
+		<table>
+			<tr>
+				<th>아이디</th>
+				<td><input type="text" /></td>
+			</tr>
+			<tr>
+				<th>비밀번호</th>
+				<td><input type="password" /></td>
+			</tr>
+			<tr>
+				<td colspan = "2">
+					<button>로그인</button>
+				</td>
+			</tr>
+		</table>
+	</div>
+	
+	<button id="open" onclick="slideToggleLogin();">로그인하기</button><br />
+	
+	<!-- animate효과 -->
+	<img id="baby2"src="/img/man.gif" alt="아기사진" /><br />
+	<button onclick="moveLeft();">left</button>
+	<button onclick="moveRight();">right</button>
+	<button onclick="moveUp();">up</button>
+	<button onclick="moveDown();">down</button>
+	
+</body>
+</html>

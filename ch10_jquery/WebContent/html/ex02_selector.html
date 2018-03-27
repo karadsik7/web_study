@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!-- 주의 : 임포트한 스크립트 코드 내부에 코드 적지 말것 -->
+<script src = "https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script>
+	$(function(){
+		//태그 선택자
+		$("li").css("listStyle", "none");
+		$("li").css("color", "red");
+		
+		//아이디 선택자
+		$("#two").css("font-size", "30pt");
+		
+		//클래스 선택자
+		$("li.abc").css("color", "#f0f");
+		
+		//과제 : title 속성을 가지고 있는 모든 태그들의 글자에 밑줄을 그으시오.
+		$("[title]").css("text-decoration", "underline");
+		$("[title = '1']").html("보ㅜㅜㅜㅜㅜㅜㅜㅜㅜㅜㅜ하사");
+		
+		//복수선택자
+		$("td, p").css("background", "gray");
+		
+		
+	});
+</script>
+</head>
+<body>
+	<ul>
+		<li>동해물과</li>
+		<li id = "two">백두산이</li>
+		<li class="abc">마르고</li>
+		<li class="def">닳도록</li>
+		<li title = "1">하느님이</li>
+		<li title = "2">보우하사</li>
+	</ul>
+	
+	<p class = "abc">대한사람 대한으로</p>
+	<table>
+		<tr>
+			<td>무궁화 삼천리</td>
+		</tr>
+	</table>
+</body>
+</html>

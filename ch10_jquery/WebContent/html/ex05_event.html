@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script>
+	$(function(){
+		/* $("#baby").on("click", function(){
+			$("#baby").css("width", "100px");
+		}) 아래와 위 둘다 같음 */
+		$("#baby").click(function(){
+			$("#baby").css("width", "100px");
+		})
+		$("#baby").on("dblclick", function(){
+			$("#baby").css("width", "300px");
+		})
+		
+		$("#baby").on("mousemove", function(event){
+			console.log("x: ", event.clientX, "y: ", event.clientY);
+		});
+		
+		$("#baby").mouseover(function(){
+			//투명도를 0.5
+			//$("#baby").css("opacity", "0.5");
+			$("#baby").animate({opacity:0.5}, 100);
+		})
+		
+		$("#baby").mouseout(function(){
+			//투명도를 1
+			//$("#baby").css("opacity", "1");
+			$("#baby").animate({opacity:1}, 100);
+		})
+		
+		
+	})
+</script>
+</head>
+<body>
+	<img id="baby" src="../img/man.gif" alt="" />
+</body>
+</html>

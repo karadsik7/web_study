@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script>
+	//ch09_js_DOM의 ex08_event_etc.html예제의 자바스크립트 코드를 jquery로 변경하시오.
+	//태그선택, 태그생성, 태그추가 등
+	//아이디가 input인 태그의 value를 가져오는코드는
+	/* var text = $("#input").val();
+	//아이디가 input인 태그의 value를 공백으로 만드는 코드는
+	$("#input").val(""); */
+	
+	
+	
+	
+		
+		function asdf(event){
+			var myInput = $("#input");
+			if(event.key == 'Enter'){
+				var temp = $('#input').val();
+				if(myInput.val() == ""){
+					return;
+					}
+				var add = $('<option></option>');
+				add.html(temp);
+				$('#select').append(add);
+				myInput.val("");
+			}
+		}
+	
+	
+		
+		function def(event){
+			$("#area").append($("#select").val() + ", ");
+		}
+	
+	
+	
+	
+	
+	
+</script>
+</head>
+<body>
+	<textarea id="area"></textarea>
+	<br />
+	<select name="" id="select" onchange = "def(event);">
+		<option>::선택::</option>
+	</select>
+	<br />
+	<input type="text" id="input" onkeypress="asdf(event);"/>
+</body>
+</html>
