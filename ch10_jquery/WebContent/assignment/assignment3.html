@@ -33,6 +33,11 @@
 	}
 	
 	function move(){
+		/* var left = $("#man").css("left");
+		left = left.replace("px", "");
+		left = Number(left);
+		var length = Math.random()*200 - 100;
+		left = left + length; */
 		var left = Math.random()*530;
 		var right = Math.random()*530;
 		$("#man").animate({left: left+"px"}, 500);
