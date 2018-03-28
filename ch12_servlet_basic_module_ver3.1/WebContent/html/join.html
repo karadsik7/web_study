@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script>
+	function send(){
+		var id = $("#id").val();
+		var password = $("#password").val();
+		var hobby1 = $("#hobby1").val();
+		var hobby2 = $("#hobby2").val();
+		console.log("아이디:", id);
+		console.log("비밀번호:", password);
+		console.log("취미1:", hobby1);
+		console.log("취미2:", hobby2);
+		
+		location.href="/parameter?id="+id+"&password="+password+"&hobby="+hobby1+"&hobby="+hobby2;
+				                
+	}
+</script>
+</head>
+<body>
+	<!-- action에 들어갈 값은 요청할 서버url -->
+	<!-- 메서드 방식은 기본값 get방식 따로 post방식으로 변경 가능 -->
+	<form method="post" action="/parameter">
+		<input id="id" name="id" type="text" placeholder="아이디" /><br />
+		<input id="password" name="password" type="password" placeholder="비밀번호" /><br />
+		<input id="hobby1" name="hobby" type="checkbox" value="movie" />영화
+		<input id="hobby2" name="hobby" type="checkbox" value="sports" />운동<br />
+		<!-- 타입이 submit인 button태그는 데이터를 전송하기 위한 버튼 -->
+		<button type="submit">전송</button>	
+	</form>
+	
+</body>
+</html>
