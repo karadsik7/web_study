@@ -38,7 +38,8 @@ public class JdbcServlet extends HttpServlet {
 		ResultSet rs = null;
 		
 		try {
-			conn = DbConnectorJNDI.getConnection();
+			DbConnectorJNDI connector = DbConnectorJNDI.getInstance();
+			conn = connector.getConnection();
 			stmt = conn.createStatement();
 			String query = "select * from employees";
 			rs = stmt.executeQuery(query);
