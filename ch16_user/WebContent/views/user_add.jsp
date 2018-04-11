@@ -1,3 +1,4 @@
+<%@page import="com.inc.dao.UserDao"%>
 <%@page import="com.inc.vo.UserVo"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -22,7 +23,15 @@
 	uvo.setName(name);
 	
 	
-	//4. 나머진 다음시간에
+	//4. Db에 적용하기 위해 Dao를 거쳐야하므로 Dao에 보내준다.
+	
+	UserDao userDao = UserDao.getInstance();
+	userDao.insert(uvo);
+	
+	//5. 다시 갱신과 돌아가는 작업의 번거로움을 줄이기 위해 리다이렉트해준다
+	
+	response.sendRedirect("user_list.jsp");
+	
 	
 	
 
