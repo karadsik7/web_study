@@ -4,7 +4,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
-	ScoreDao scoreDao = new ScoreDao();
+	ScoreDao scoreDao = ScoreDao.getInstance();
 	ArrayList<ScoreVo> scoreList = scoreDao.selectList();
 	
 %>
@@ -29,13 +29,27 @@
 		padding : 10px;
 		text-align: center;
 	}
+	caption{
+		padding: 10px;
+	}
 	.footer{
 		width : 300px;
-		margin : 50px auto;
+		margin : 20px auto;
 	}
 </style>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-
+<script>
+	function del(id){
+		var check = window.confirm("정말로 삭제하시겠습니까?");
+		if(check){
+			location.href = "score_del.jsp?id="+id;	
+		}
+	}
+	
+	function modify(id){
+		location.href = "score_update_view.jsp?id="+id;
+	}
+</script>
 </head>
 <body>
 	<div class="main">
@@ -62,8 +76,10 @@
 					<td><%=svo.getTotal() %></td>
 					<td><%=svo.getAvg() %></td>
 					<td>
-						<button type="button">수정</button>
-						<button type="button">삭제</button>
+						<button type="button" 
+						onclick="modify(<%=svo.getId() %>);">수정</button>
+						<button type="button" 
+						onclick="del(<%=svo.getId() %>);">삭제</button>
 					</td>
 				</tr>
 				<%} %>
