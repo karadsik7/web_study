@@ -12,10 +12,6 @@
 	String id = request.getParameter("id");
 	String name = request.getParameter("name");
 	
-	System.out.println(id);
-	System.out.println(name);
-	
-	
 	//3. Vo에 형태에 맞게 넣어준다
 	
 	UserVo uvo = new UserVo();

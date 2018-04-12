@@ -41,7 +41,8 @@ table, th, td{
 <body>
 	<div class="main">
 		<div class="content">
-		<!-- 히든태그를 통해서, 다른 jsp문서와 데이터를 교환하기 위한 primary key값은 보관하고 있어야한다. -->
+		<!-- 히든태그를 통해서, 최종적으로 sql문에서 필요한 id값은 보관하고 있어야한다. 따라서 이것도
+		넘겨준다.-->
 				<!-- form태그를 통해 넘겨준다 -->
 			<form action="user_modify.jsp" method="post">
 			<input type="hidden" name="id" value="<%=uvo.getId() %>" />
