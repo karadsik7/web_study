@@ -76,6 +76,64 @@ public class BookDao {
 		}
 	}
 	
+	public void del(int id) {
+		Connection conn = null;
+		Statement stmt = null;
+		try {
+			conn = DbConnector.getInstance().getConnection();
+			stmt = conn.createStatement();
+			stmt.executeUpdate(String.format("delete from guestbook where id = %d", id));
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}finally {
+			DbCloser.close(conn, stmt, null);
+		}
+	}
 	
+	public BookVo selectOne(int id) {
+		Connection conn = null;
+		Statement stmt = null;
+		ResultSet rs = null;
+		BookVo bvo = new BookVo();
+		
+		try {
+			conn = DbConnector.getInstance().getConnection();
+			stmt = conn.createStatement();
+			String query = String.format("select * from guestbook where id = %d", id);
+			rs = stmt.executeQuery(query);
+			rs.next();
+			
+			bvo.setId(rs.getInt("id"));
+			bvo.setPassword(rs.getString("password"));
+			bvo.setMsg(rs.getString("msg"));
+			bvo.setWriter(rs.getString("writer"));
+			
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}finally {
+			DbCloser.close(conn, stmt, rs);
+		}
+		return bvo;		
+	}
+	
+	public void modify(BookVo bvo) {
+		Connection conn = null;
+		Statement stmt = null;
+		try {
+			conn = DbConnector.getInstance().getConnection();
+			stmt = conn.createStatement();
+			int id = bvo.getId();
+			String writer = bvo.getWriter();
+			String password = bvo.getPassword();
+			String msg = bvo.getMsg();
+			
+			stmt.executeUpdate(String.format("update guestbook set writer = '%s', password = '%s', msg = '%s' where id = %d", writer, password, msg, id));
+			
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}finally {
+			DbCloser.close(conn, stmt, null);
+		}
+	}
 	
 }

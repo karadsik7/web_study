@@ -8,7 +8,28 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="/ch18_guestbook/css/style.css" />
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-
+<script>
+	function del(password, id){
+		var user_password = prompt("비밀번호를 입력해주세요.");
+		if(password != user_password){
+			alert("비밀번호가 일치하지 않습니다.");
+			return;
+		}else{
+			//서버로 삭제 요청
+			location.href = "${pageContext.request.contextPath}/book/delete?id=" + id;
+		}
+	}
+	
+	function mod(password, id){
+		var user_password = prompt("비밀번호를 입력하세요.");
+		if(password != user_password){
+			alert("비밀번호가 일치하지 않습니다.");
+			return;
+		}else{
+			location.href = "${pageContext.request.contextPath}/book/modify?id=" + id;
+		}
+	}
+</script>
 </head>
 <body>
 	<div class="main">
@@ -36,8 +57,8 @@
 					<div>${bvo.writedate }</div>
 				</div>
 				<div class="text_center">
-					<button type="button" class="smaLL">Delete</button>
-					<button type="button" class="smaLL">Modify</button>
+					<button type="button" class="smaLL" onclick="del('${bvo.password }', '${bvo.id }');">Delete</button>
+					<button type="button" class="smaLL" onclick="mod('${bvo.password }', '${bvo.id }');">Modify</button>
 				</div>
 			</div>
 		</c:forEach>
