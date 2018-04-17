@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script>
+	//json은 서로다른 언어간의 객체형 데이터를 주고받기 위한 포맷형식
+	
+	//자바에서의 객체 활용
+	/* class Person(){
+		int age = 10;
+		String name = "brb";
+		
+		int sum(int a, int b){
+			return a + b;
+		}
+	}
+	
+	Person p = new Person();
+	System.out.println(p.age); */
+	
+	//json에서의 객체 활용
+	//{"키값" : value}
+	var p = {"age" : 10, "name" : "장동혁", 
+			"sum" : function(a, b){
+				return a + b;
+				}
+	};
+	
+	console.log(p.age);
+	console.log(p.name);
+	console.log(p.sum(10, 20));
+	
+	var personArray = [
+		{"name" : "홍길동", "age" : 500}, {"name" : "임꺽정", "age" : 550}
+	];
+	
+	console.log("임꺽정의 나이", personArray[1].age);
+	
+	var object = {
+		"fruitArray" : ["apple", "banana", "orange"],
+		"city" : {"name" : "seongnam", "region" : "Gyeonggi-do"}
+	}
+	
+	console.log("세번째 과일", object.fruitArray[2]);
+	console.log("성남시가 속한 도", object.city.region);
+	
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>
