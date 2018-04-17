@@ -22,7 +22,7 @@
 		var url = "${pageContext.request.contextPath}/video/list";
 		var obj = {
 				"url" : url,
-				"method":"POST",
+				"type":"POST",
 				"success" : function(data){
 					data = eval(data);
 					for(var video of data){
