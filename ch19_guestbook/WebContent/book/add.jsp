@@ -79,15 +79,14 @@ td {
 			if(xhr.readyState == 4 && xhr.status == 200){
 				var check = xhr.responseText;
 				if(check == 404404){
-					alert("서버 오류입니다. 잠시 후 다시 시도하세요.");
-				}
-				if(check == 0){
+					alert("DB 오류입니다. 관리자에게 문의하세요.");
+				}else if(check == 0){
 					$("#dualDiv").css("display", "block");
-					$("#dualDiv").html("<h5>입력하신 아이디는 중복되지 않습니다.</h5>");
+					$("#dualDiv").html("<h5>첫 방명록이시군요!</h5>");
 					$("#dualDiv").css("color", "blue");
 				}else{
 					$("#dualDiv").css("display", "block");
-					$("#dualDiv").html("<h5>입력하신 아이디는 중복됩니다.</h5>");
+					$("#dualDiv").html("<h5>이미 방명록을 남기셨네요.</h5>");
 					$("#dualDiv").css("color", "red");
 				}
 			}
