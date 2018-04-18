@@ -12,7 +12,7 @@
 	function del(id){
 		var url = "${pageContext.request.contextPath}/book/password";
 		$.ajax({
-			//js내부에서만 처리되고 다른언어로 전송되지 않는다면 키값에 ""는 제거가능
+			//JSON이 js내부에서만 처리되고 다른언어로 전송되지 않는다면 키값에 ""는 제거가능
 			url : url,
 			data : "id="+id,
 			type : "post",
