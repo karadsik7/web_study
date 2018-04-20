@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <!-- 맵퍼는 해당 테이블에 접근해서 쿼리문을 실행하고 resultType 경로의 객체(보통 Vo)로 묶어서 반환해줌 -->
+  <!-- 테이블명 -->
+<mapper namespace="department">
+	<!-- selectList라는 명으로 요청하면 셀렉트태그 내부의 쿼리문 실행 resultType은 EmpVo타입으로 -->
+  <select id="selectList" resultType="com.inc.vo.DeptVo">
+  	select * from departments
+  </select>
+</mapper>
