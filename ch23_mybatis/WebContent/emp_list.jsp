@@ -18,6 +18,8 @@
 					<th>이름</th>
 					<th>월급</th>
 					<th>입사일</th>
+					<th>부서명</th>
+					<th>도시명</th>
 				</tr>
 				<c:forEach var="evo" items="${requestScope.empList }">
 				<tr>
@@ -25,6 +27,8 @@
 					<td>${evo.first_name }</td>
 					<td>${evo.salary }</td>
 					<td>${evo.hire_date }</td>
+					<td>${evo.dvo.department_name }</td>
+					<td>${evo.dvo.locVo.city }</td>
 				</tr>	
 				</c:forEach>
 			</table>

@@ -2,11 +2,22 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-  <!-- 맵퍼는 해당 테이블에 접근해서 쿼리문을 실행하고 resultType 경로의 객체(보통 Vo)로 묶어서 반환해줌 -->
-  <!-- 테이블명 -->
 <mapper namespace="employee">
-	<!-- selectList라는 명으로 요청하면 셀렉트태그 내부의 쿼리문 실행 resultType은 EmpVo타입으로 -->
-  <select id="selectList" resultType="com.inc.vo.EmpVo">
+  <select id="selectList" resultMap="empMap">
   	select * from employees
   </select>
+  
+  <resultMap type="com.inc.vo.EmpVo" id="empMap">
+  	<association property="dvo" column="department_id" javaType="com.inc.vo.DeptVo" select="departmentJoin" />
+  </resultMap>
+  
+  <!-- resultMap이나 join할 쿼리를 select하는 속성에서 다른 맵퍼 간에 코드 재사용이 가능하다. (namespace.id) -->
+ <!--  <resultMap type="com.inc.vo.DeptVo" id="emp_dept_locMap">
+  	<association property="locVo" column="location_id" javaType="com.inc.vo.LocVo" select="department.locJoin"></association>
+  </resultMap> -->
+  
+  <select id="departmentJoin" parameterType="int" resultMap="department.deptMap2">
+  	select * from departments where department_id = #{value}
+  </select>
+  
 </mapper>

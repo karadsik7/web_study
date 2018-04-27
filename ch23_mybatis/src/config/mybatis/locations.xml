@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="locations">
+
+<select id="selectList" resultMap="locDeptMap">
+	select * from locations
+</select>
+
+<resultMap type="com.inc.vo.LocVo" id="locDeptMap">
+	<id property="location_id" column="location_id"/>
+	<collection property="deptList" column="location_id" ofType="com.inc.vo.DeptVo" select="locDeptJoin"/>
+</resultMap>
+
+<select id="locDeptJoin" parameterType="int" resultType="com.inc.vo.DeptVo">
+	select * from departments where location_id = #{value}
+</select>
+	
+</mapper>

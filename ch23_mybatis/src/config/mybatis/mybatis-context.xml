@@ -20,5 +20,6 @@
   <mappers>
   	<mapper resource = "config/mybatis/employee.xml"/>
   	<mapper resource = "config/mybatis/department.xml"/>
+  	<mapper resource = "config/mybatis/locations.xml"/>
   </mappers>
 </configuration>

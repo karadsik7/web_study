@@ -5,7 +5,14 @@ public class EmpVo {
 	private String first_name;
 	private int salary;
 	private String hire_date;
+	private DeptVo dvo;
 	
+	public DeptVo getDvo() {
+		return dvo;
+	}
+	public void setDvo(DeptVo dvo) {
+		this.dvo = dvo;
+	}
 	public int getEmployee_id() {
 		return employee_id;
 	}

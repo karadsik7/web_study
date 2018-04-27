@@ -31,4 +31,11 @@ public class DeptDao {
 		return deptList;
 	}
 	
+	public List<DeptVo> selectList2(){
+		SqlSession session = factory.openSession();
+		List<DeptVo> deptList = session.selectList("department.selectList2");
+		session.close();
+		return deptList;
+	}
+	
 }

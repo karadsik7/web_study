@@ -14,29 +14,29 @@
 		<div class="content">
 			<table>
 				<tr>
-					<th>번호</th>
-					<th>부서명</th>
-					<th>사원 목록</th>
+					<th>도시명</th>
+					<th>거리명</th>
+					<th>부서목록</th>
 				</tr>
-				<c:forEach var="dvo" items="${requestScope.deptList }">
+				<c:forEach var="lvo" items="${locList }">
 				<tr>
-					<td>${dvo.department_id }</td>
-					<td>${dvo.department_name }</td>
+					<td>${lvo.city }</td>
+					<td>${lvo.street_address }</td>
 					<td>
 						<table>
 							<tr>
-								<th>사원 번호</th>
-								<th>사원 이름</th>
+								<th>부서번호</th>
+								<th>부서명</th>
 							</tr>
-							<c:forEach var="evo" items="${dvo.empList }">
+							<c:forEach var="dvo" items="${lvo.deptList }">
 							<tr>
-								<td>${evo.employee_id }</td>
-								<td>${evo.first_name }</td>
+								<td>${dvo.department_id }</td>
+								<td>${dvo.department_name }</td>
 							</tr>
 							</c:forEach>
 						</table>
 					</td>
-				</tr>	
+				</tr>
 				</c:forEach>
 			</table>
 		</div>
