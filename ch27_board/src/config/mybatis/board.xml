@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="board">
+	<select id="selectList" resultType="board">
+		select * from board order by regdate desc
+	</select>
+	
+	<select id="selectOne" resultType="board" parameterType="int">
+		select * from board where id = #{value}
+	</select>
+	
+	<insert id="insert" parameterType="board">
+		<!-- 
+		ID      NOT NULL NUMBER        
+		NAME    NOT NULL VARCHAR2(30)  
+		TITLE   NOT NULL VARCHAR2(100) 
+		CONTENT NOT NULL CLOB          
+		IP      NOT NULL VARCHAR2(15)  
+		REGDATE          DATE          
+		HIT              NUMBER        
+		REF              NUMBER        
+		STEP             NUMBER        
+		DEPTH            NUMBER -->
+		insert into board values(seq_board_id.nextval, #{name}, #{title}, #{content}, #{ip}, sysdate, 0, seq_board_id.currval, 0, 0)
+	</insert>
+</mapper>
