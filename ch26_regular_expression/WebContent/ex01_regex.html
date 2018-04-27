@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script>
+	function check(f){
+		var pattern = /^[a-zA-Z]$/
+		if(!pattern.test(f.title.value)){
+			alert("알파벳, 한 글자 이상");
+			f.title.focus();
+			return;
+		}
+		
+		f.submit();
+	}
+</script>
+</head>
+<body>
+	<form action="/check">
+		<input type="text" name="title" />
+		<button type="button" 
+		        onclick="check(this.form);">전송</button>
+	</form>
+</body>
+</html>

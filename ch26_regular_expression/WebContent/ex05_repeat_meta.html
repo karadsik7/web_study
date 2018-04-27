@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script>
+	function check(f){
+		var ptn = /^\d*$/;
+		if(!ptn.test(f.title.value)){
+			alert("땡");
+			return;
+		}
+		f.submit();
+	}
+
+	function check2(f){
+		var ptn = /^[a-zA-Z]?$/;
+		if(!ptn.test(f.title.value)){
+			alert("땡");
+			return;
+		}
+		f.submit();
+	}
+	
+	
+	
+	function check3(f){
+		var ptn = /^[ㄱ-ㅎㅏ-ㅣ가-힣]+$/;
+		if(!ptn.test(f.title.value)){
+			alert("땡");
+			return;
+		}
+		f.submit();
+	}
+	
+	function check4(f){
+		var ptn = /^(apple){2,5}$/;
+		if(!ptn.test(f.title.value)){
+			alert("땡");
+			return;
+		}
+		f.submit();
+	}
+
+	
+	
+	function check5(f){
+		//var ptn = /^(male|female)$/;
+		var ptn = /^(fe)?male$/;
+		if(!ptn.test(f.title.value)){
+			alert("땡");
+			return;
+		}
+		f.submit();
+	}
+</script>
+</head>
+<body>
+	<h3>* : 0개 ~ 여러개 == {0,}</h3>
+	<form action="/check">
+		<input type="text" name="title" />
+		<button type="button" onclick="check(this.form)">전송</button>
+	</form>
+	
+	<h3>? : 0개 또는 1개 == {0,1}</h3>
+	<form action="/check">
+		<input type="text" name="title" />
+		<button type="button" onclick="check2(this.form)">전송</button>
+	</form>
+	
+	<h3>+ : 1개 또는 여러개 == {1,}</h3>
+	<form action="/check">
+		<input type="text" name="title" />
+		<button type="button" onclick="check3(this.form)">전송</button>
+	</form>
+	
+	<h3>apple이 2개 ~ 5개 포함</h3>
+	<form action="/check">
+		<input type="text" name="title" />
+		<button type="button" onclick="check4(this.form)">전송</button>
+	</form>
+	
+	<h3>male 또는 female</h3>
+	<form action="/check">
+		<input type="text" name="title" />
+		<button type="button" onclick="check5(this.form)">전송</button>
+	</form>
+
+</body>
+</html>
