@@ -7,7 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="${pageContext.request.contextPath }/css/style.css" />
+<link rel="stylesheet" href="${pageContext.request.contextPath }/css/style.css?ver=1" />
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 
 </head>
@@ -33,7 +33,7 @@
 			<c:forEach var="bvo" items="${boardList }">
 			<tr>
 				<td>${bvo.id }</td>
-				<td><a href="${pageContext.request.contextPath}/board/view?id=${bvo.id}">${bvo.title }</a></td>
+				<td><a href="${pageContext.request.contextPath}/board/view?id=${bvo.id}&page=${param.page}">${bvo.title }</a></td>
 				<td>${bvo.name }</td>
 				<td>
 					<f:parseDate var="date" value="${bvo.regdate }" pattern="yyyy-MM-dd HH:mm:ss"/>
@@ -48,7 +48,9 @@
 		</div>
 	</div>
 	<div class="footer">
-	
+		<div class="paging text_center">
+			${paging }
+		</div>
 	</div>
 </div>
 </body>

@@ -3,8 +3,9 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="board">
-	<select id="selectList" resultType="board">
-		select * from board order by regdate desc
+	<select id="selectList" resultType="board" parameterType="map">
+		select * from (select rownum as rnum, b.* from (select * from board order by id desc) b) 
+			where rnum between #{start} and #{end}
 	</select>
 	
 	<select id="selectOne" resultType="board" parameterType="int">
@@ -25,4 +26,20 @@
 		DEPTH            NUMBER -->
 		insert into board values(seq_board_id.nextval, #{name}, #{title}, #{content}, #{ip}, sysdate, 0, seq_board_id.currval, 0, 0)
 	</insert>
+	
+	<update id="plusHit" parameterType="int">
+		update board set hit = hit + 1 where id = #{value}
+	</update>
+	
+	<delete id="delete" parameterType="int">
+		delete from board where id = #{value}
+	</delete>
+	
+	<update id="modify" parameterType="board">
+		update board set name = #{name}, title = #{title}, content = #{content}, regdate = sysdate where id = #{id}
+	</update>
+	
+	<select id="totalCount" resultType="int">
+		select count(*) from board
+	</select>
 </mapper>
