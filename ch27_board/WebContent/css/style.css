@@ -98,3 +98,12 @@ td.content{
 	color: gray;
 }
 
+.search{
+	text-align: right;
+	padding: 20px;
+}
+
+.search input[type=text]{
+	width: 150px;
+}
+

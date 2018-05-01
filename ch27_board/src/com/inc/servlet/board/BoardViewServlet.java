@@ -19,6 +19,7 @@ public class BoardViewServlet extends HttpServlet {
 		
 		int id = Integer.parseInt(request.getParameter("id"));
 		Board board = BoardDao.getInstance().selectOne(id);
+		System.out.println(board.getId());
 		BoardDao.getInstance().plusHit(id);
 		request.setAttribute("board", board);
 		request.getRequestDispatcher("/views/board/view.jsp").forward(request, response);

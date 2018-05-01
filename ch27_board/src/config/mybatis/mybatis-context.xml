@@ -23,5 +23,6 @@
   <!-- 맵퍼 파일 내부에서 원하는 쿼리문 작성 -->
   <mappers>
   	<mapper resource = "config/mybatis/board.xml"/>
+  	<mapper resource = "config/mybatis/reply.xml"/>
   </mappers>
 </configuration>

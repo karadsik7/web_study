@@ -14,7 +14,7 @@ public class Paging {
 		return single;
 	}
 	
-	public String getPaging(String url, int nowPage, int totalCount, int maxCountOfOneList, int maxCountOfOnePage) {
+	public String getPaging(String url, int nowPage, int totalCount, int maxCountOfOneList, int maxCountOfOnePage, String searchParam) {
 		StringBuffer sb = new StringBuffer();
 		//전체페이지 수
 		int totalPage;
@@ -62,7 +62,8 @@ public class Paging {
 		//6.이전 페이지 버튼 설정
 		if(isPrevPage) {
 			sb.append(String.format("<a href='%s?page=", url));
-			sb.append(nowPage-maxCountOfOnePage);
+			sb.append(groupEndPage-maxCountOfOnePage);
+			sb.append(searchParam);
 			sb.append("'>◀</a>");
 		}else {
 			sb.append("◁");
@@ -75,7 +76,7 @@ public class Paging {
 				sb.append(i);
 			}else {
 				sb.append(String.format("<a href='%s?page=", url));
-				sb.append(i + "'>");
+				sb.append(i + searchParam + "'>");
 				sb.append(i + "</a>");
 			}
 			sb.append("&nbsp");
@@ -86,8 +87,9 @@ public class Paging {
 			if(nowPage + maxCountOfOnePage > totalPage) {
 				sb.append(totalPage);
 			}else {
-				sb.append(nowPage+maxCountOfOnePage);
+				sb.append(groupStartPage + maxCountOfOnePage);
 			}
+			sb.append(searchParam);
 			sb.append("'>▶</a>");
 		}else {
 			sb.append("▷");

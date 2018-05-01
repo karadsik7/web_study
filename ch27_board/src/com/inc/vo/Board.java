@@ -1,5 +1,7 @@
 package com.inc.vo;
 
+import java.util.List;
+
 public class Board {
 	/*
 	ID      NOT NULL NUMBER        
@@ -15,7 +17,14 @@ public class Board {
 
 	private int id, hit, ref, step, depth;
 	private String name, title, content, ip, regdate;
+	private List<Reply> replyList;
 	
+	public List<Reply> getReplyList() {
+		return replyList;
+	}
+	public void setReplyList(List<Reply> replyList) {
+		this.replyList = replyList;
+	}
 	public int getId() {
 		return id;
 	}

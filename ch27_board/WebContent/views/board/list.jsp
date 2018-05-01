@@ -7,14 +7,55 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="${pageContext.request.contextPath }/css/style.css?ver=1" />
+<link rel="stylesheet" href="${pageContext.request.contextPath }/css/style.css" />
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-
+<script>
+	$(function(){
+		lock();
+		for(var option of $("#search_option").children()){
+			if($(option).val() == '${param.option}'){
+				$(option).attr("selected", "selected");
+			}
+		}
+	})
+	function lock(){
+		if($("#search_option").val() == "all"){
+			$("#search_text").attr("disabled", "disabled");
+			$("#search_text").val("");
+			
+			
+		}else{
+			$("#search_text").removeAttr("disabled");
+		}
+	}
+	
+	function search(){
+		var option = $("#search_option").val();
+		var text = $("#search_text").val();
+		if(option != 'all' && text == ""){
+			alert("검색어를 입력하세요.");
+			$("#search_text").focus;
+			return;
+		}
+		location.href = '?option='+option+"&text="+text;
+	}
+</script>
 </head>
 <body>
 <div class="container">
 	<div class="header">
 		<h3 class="title text_center">자유게시판</h3>
+		<div class="search">
+			<select id="search_option" onchange="lock();">
+				<option value="all">전체</option>
+				<option value="title">제목</option>
+				<option value="name">이름</option>
+				<option value="content">내용</option>
+				<option value="title_content">제목+내용</option>
+			</select>
+			<input type="text" id="search_text" value="${param.text }" />
+			<button type="button" onclick="search();">검색</button>
+		</div>
 	</div>
 	<div class="body">
 		<table class="board">

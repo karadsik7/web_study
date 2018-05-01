@@ -67,10 +67,22 @@ public class BoardDao {
 		session.close();
 	}
 	
-	public int totalCount() {
+	public int totalCount(Map<String, Object> searchMap) {
 		SqlSession session = factory.openSession();
-		int count = session.selectOne("board.totalCount"); 
+		int count = session.selectOne("board.totalCount", searchMap); 
 		session.close();
 		return count;
+	}
+	
+	public void comment(Board board) {
+		SqlSession session = factory.openSession(true);
+		session.insert("board.comment", board);
+		session.close();
+	}
+	
+	public void updateStep(Board board) {
+		SqlSession session = factory.openSession(true);
+		session.update("board.updateStep", board);
+		session.close();
 	}
 }
