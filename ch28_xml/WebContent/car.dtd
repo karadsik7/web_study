@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT cars (car*)>
+<!ELEMENT car (model, company, color+)>
+<!ELEMENT model (#PCDATA)>
+<!ELEMENT company (name, ceo)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT ceo (#PCDATA)>
+<!ELEMENT color (#PCDATA)>
+
+<!ATTLIST car id ID #REQUIRED>

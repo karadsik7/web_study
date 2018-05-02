@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 태그정의 <!ELEMENT 상위태그 (자식태그 or #PCDATA(문자열))> -->
+<!ELEMENT persons (person+)>
+<!ELEMENT person (name, age, phone)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT age (#PCDATA)>
+<!ELEMENT phone (#PCDATA)>
+<!-- 속성정의 -->
+<!--1.기본값 정의
+<!ATTLIST 태그명 속성명 CDATA(문자열) "기본값"> -->
+<!ATTLIST phone type CDATA "normal">
+<!--2.필수 요소값 부여 
+<!ATTLIST 태그명 속성명 CDATA(문자열) #REQUIRED> -->
+<!ATTLIST phone type CDATA #REQUIRED>
+<!--3.생략 가능 
+<!ATTLIST 태그명 속성명 CDATA(문자열) #IMPLIED> -->
+<!ATTLIST phone type CDATA #IMPLIED>
+<!--4. x중에서 하나 
+<!ATTLIST 태그명 속성명 (선택값|선택값|...) "기본값"> -->
+<!ATTLIST phone type (normal|mobile) "normal">

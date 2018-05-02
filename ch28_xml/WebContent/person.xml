@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE persons SYSTEM "person.dtd">
+<persons>
+	<person>
+		<name>1길동</name>
+		<age>33</age>
+		<phone>010-1111-1111</phone>
+	</person>
+	<person>
+		<name>2길동</name>
+		<age>22</age>
+		<phone type="mobile">010-2222-2222</phone>
+	</person>
+	<person>
+		<name>3길동</name>
+		<age>11</age>
+		<phone type="mobile">02-333-3333</phone>
+	</person>
+	<person>
+		<name>4길동</name>
+		<age>1</age>
+		<phone>02-444-4444</phone>
+	</person>
+</persons>

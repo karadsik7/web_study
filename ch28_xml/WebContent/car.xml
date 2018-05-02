@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE cars SYSTEM "car.dtd">
+<cars>
+	<car id="a">
+		<model>sonata</model>
+		<company>
+			<name>hyundai</name>
+			<ceo>정몽구</ceo>
+		</company>
+		<color>blue</color>
+		<color>red</color>
+	</car>
+	<car id="b">
+		<model>K5</model>
+		<company>
+			<name>hyundai</name>
+			<ceo>정몽구</ceo>
+		</company>
+		<color>black</color>
+	</car>
+	
+</cars>

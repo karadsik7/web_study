@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE table SYSTEM "table.dtd">
+<table>
+	<caption>성적관리시스템</caption>
+	<tr>
+		<th>국어</th>
+		<th>수학</th>
+		<th colspan="2">영어</th>
+	</tr>
+	<tr>
+		<td>100</td>
+		<td>50</td>
+		<td>0ㅇㅁㄹ</td>
+	</tr>
+</table>

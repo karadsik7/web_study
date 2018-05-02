@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT table (caption?, tr*)>
+<!-- <!ELEMENT caption EMPTY> -->
+<!-- <!ELEMENT tr ANY> -->
+
+<!ELEMENT caption (#PCDATA)>
+<!ELEMENT tr (th*, td*)>
+<!ELEMENT th ANY>
+<!ELEMENT td ANY>
+
+<!ATTLIST th colspan CDATA "1">
+<!ATTLIST td colspan CDATA "1">
+

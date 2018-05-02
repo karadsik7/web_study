@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT ul (li*)>
+<!ELEMENT li (#PCDATA)>
+
+<!ATTLIST ul type (disc|circle|square) "disc">
+<!ATTLIST ul type CDATA #REQUIRED>
+<!ATTLIST li list-style (none|disc|circle|square|decimal) "none">
