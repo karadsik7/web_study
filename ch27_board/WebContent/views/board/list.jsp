@@ -74,7 +74,16 @@
 			<c:forEach var="bvo" items="${boardList }">
 			<tr>
 				<td>${bvo.id }</td>
-				<td><a href="${pageContext.request.contextPath}/board/view?id=${bvo.id}&page=${param.page}">${bvo.title }</a></td>
+				<td style="text-align: left;">
+					<c:forEach var="i" begin="1" end="${bvo.depth }">
+						<c:if test="${i != bvo.depth}">
+						&nbsp;&nbsp;&nbsp;
+						</c:if>
+						<c:if test="${i == bvo.depth }">
+						└▶
+						</c:if>
+					</c:forEach>
+					<a href="${pageContext.request.contextPath}/board/view?id=${bvo.id}&page=${param.page}">${bvo.title }</a></td>
 				<td>${bvo.name }</td>
 				<td>
 					<f:parseDate var="date" value="${bvo.regdate }" pattern="yyyy-MM-dd HH:mm:ss"/>
