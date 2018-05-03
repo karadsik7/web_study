@@ -21,7 +21,7 @@
 			<tr>
 				<td>${person.getChildText("name") }</td>
 				<td>${person.getChildText("age") }</td>
-				<td>${person.getChild("phone").getAttributeValue("type") }</td>
+				<td>${person.getChild("phone").getAttributeValue }</td>
 				<td>${person.getChildText("phone") }</td>
 			</tr>
 		</c:forEach>

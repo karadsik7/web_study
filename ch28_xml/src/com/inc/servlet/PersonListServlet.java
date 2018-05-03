@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.jdom2.Attribute;
 import org.jdom2.Document;
 import org.jdom2.Element;
 import org.jdom2.JDOMException;
@@ -32,7 +33,7 @@ public class PersonListServlet extends HttpServlet {
 			Element persons = document.getRootElement();
 			List<Element> personList = persons.getChildren("person");
 			
-			/*for(Element person : personList) {
+			for(Element person : personList) {
 				String name = person.getChildText("name");
 				int age = Integer.parseInt(person.getChildText("age"));
 				String phone = person.getChildText("phone");
@@ -44,8 +45,8 @@ public class PersonListServlet extends HttpServlet {
 				pvo.setPhone(phone);
 				pvo.setType(type);
 				
-				pvoList.add(pvo);
-			}*/
+				//pvoList.add(pvo);
+			}
 			request.setAttribute("personList", personList);
 			request.getRequestDispatcher("/person/list.jsp").forward(request, response);
 		} catch (JDOMException e) {
