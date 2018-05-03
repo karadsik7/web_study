@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	.container{
+		display: grid;
+		grid-template-columns: 50% 50%;
+		
+	}
+	.left{
+		background: rgba(255, 0, 0, 0.2);
+	}
+	.right{
+		background: rgba(0, 255, 0, 0.2);
+	}
+	p{
+		font-size: 30pt;
+	}
+	
+	@media only screen and (max-width: 900px){
+		.left{
+			background: rgba(255, 0, 0, 0.5);
+		}
+		.right{
+			background: rgba(0, 255, 0, 0.5);
+		}
+		p{
+			font-size: 20pt;
+		}
+	}
+	
+	@media only screen and (max-width: 600px){
+		.container{
+			display: block;
+		}
+		.left{
+			background: rgba(255, 0, 0, 0.5);
+		}
+		.right{
+			background: rgba(0, 255, 0, 0.5);
+		}
+		p{
+			font-size: 15pt;
+		}
+	}
+
+</style>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+</head>
+<body>
+	<div class="container">
+		<div class="left">
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut magnam in voluptate est impedit sed expedita ab accusamus ea soluta!</p>
+		</div>
+		<div class="right">
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error harum doloremque voluptatum obcaecati. Autem aut ipsa ratione obcaecati maiores enim corrupti neque recusandae consequuntur atque dolores in quasi consequatur voluptas?</p>
+		</div>
+	</div>
+</body>
+</html>
